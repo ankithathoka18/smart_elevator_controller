@@ -1,0 +1,73 @@
+OpenSTA 2.4.0 41a51eaf4c Copyright (c) 2021, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: /work/input/elevator_controller.v line 103, module sky130_fd_sc_hd__fill_1 not found. Creating black box for FILLER_0_0_15.
+Warning: /work/input/elevator_controller.v line 115, module sky130_ef_sc_hd__decap_12 not found. Creating black box for FILLER_0_0_41.
+Warning: /work/input/elevator_controller.v line 159, module sky130_fd_sc_hd__fill_2 not found. Creating black box for FILLER_0_11_3.
+Warning: /work/input/elevator_controller.v line 511, module sky130_fd_sc_hd__tapvpwrvgnd_1 not found. Creating black box for TAP_26.
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: moving_up (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.27    0.27   clock network delay (propagated)
+   0.00    0.27 ^ _109_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.34    0.61 v _109_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.19    0.80 ^ _051_/X (sky130_fd_sc_hd__and2b_1)
+   0.13    0.94 ^ _052_/X (sky130_fd_sc_hd__buf_1)
+   0.23    1.17 ^ output10/X (sky130_fd_sc_hd__buf_2)
+   0.00    1.17 ^ moving_up (out)
+           1.17   data arrival time
+
+  10.00   10.00   clock clk (rise edge)
+   0.00   10.00   clock network delay (propagated)
+  -0.25    9.75   clock uncertainty
+   0.00    9.75   clock reconvergence pessimism
+  -2.00    7.75   output external delay
+           7.75   data required time
+---------------------------------------------------------
+           7.75   data required time
+          -1.17   data arrival time
+---------------------------------------------------------
+           6.58   slack (MET)
+
+
+Startpoint: _108_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _108_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: min
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock clk (rise edge)
+   0.25    0.25   clock network delay (propagated)
+   0.00    0.25 ^ _108_/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.33    0.57 ^ _108_/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.09    0.66 v _055_/Y (sky130_fd_sc_hd__nand2_1)
+   0.06    0.72 ^ _056_/Y (sky130_fd_sc_hd__inv_2)
+   0.05    0.77 v _085_/Y (sky130_fd_sc_hd__a211oi_1)
+   0.00    0.77 v _108_/D (sky130_fd_sc_hd__dfxtp_1)
+           0.77   data arrival time
+
+   0.00    0.00   clock clk (rise edge)
+   0.27    0.27   clock network delay (propagated)
+   0.25    0.52   clock uncertainty
+  -0.03    0.50   clock reconvergence pessimism
+           0.50 ^ _108_/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.05    0.45   library hold time
+           0.45   data required time
+---------------------------------------------------------
+           0.45   data required time
+          -0.77   data arrival time
+---------------------------------------------------------
+           0.32   slack (MET)
+
+
+worst slack 6.58
+worst slack 0.32
