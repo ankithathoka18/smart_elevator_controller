@@ -121,3 +121,68 @@ Timing summary values collected from the available OpenLane/OpenSTA reports:
 | RCX summary | +6.41 ns | +0.39 ns | 0.00 | 0.00 |
 
 These values are copied from the report output available for this project. Results apply to the corresponding reported flow stage and constraints; they do not by themselves establish complete signoff across every process-voltage-temperature corner.
+
+---
+
+## Visual Results
+
+### RTL Simulation
+The functional testbench completed successfully with `ALL TESTS PASSED`.
+
+![RTL Simulation](screenshots/sim.png)
+
+### Physical Layout
+The generated GDSII layout is available in `physical_design/elevator_controller.gds`.
+
+![GDS Layout](screenshots/gds.png)
+
+### Physical Design Result
+The OpenLane flow completed and generated the layout. Refer to the included verification reports for the recorded results.
+
+![Physical Design Result](screenshots/pd_pss.png)
+
+## Final Results Summary
+
+| Metric | Recorded Result |
+|---|---|
+| Functional simulation | ALL TESTS PASSED |
+| Top module | `elevator_controller` |
+| Target technology | SkyWater SKY130 |
+| Physical design flow | OpenLane |
+| Synthesis cell count | 64 |
+| Reported synthesis area | 649.3728 tool-reported units |
+| Placement setup slack | +6.72 ns |
+| Placement hold slack | +0.24 ns |
+| Placement TNS | 0 |
+| DRC | Zero violations reported in available final report |
+| LVS | See included LVS report |
+| GDSII | Generated |
+
+*Timing values are from the specified implementation reports and constraints. They do not establish complete multi-corner or full PVT signoff.*
+
+## Challenges and Solutions
+
+- **Functional verification:** Used a Verilog testbench to check elevator-controller behavior.
+- **Physical implementation:** Used OpenLane to run the RTL-to-GDS flow.
+- **Timing verification:** Reviewed setup and hold timing reports and recorded the reported slack values.
+- **Layout verification:** Reviewed the available DRC and LVS reports.
+- **Reproducibility:** Retained RTL, testbench, configuration, layout, and verification reports in the project.
+
+## Limitations and Future Work
+
+- Complete and document the required multi-corner static timing analysis.
+- Confirm the exact process corners and constraints associated with each timing report.
+- Review and document any warnings or limitations in the final LVS report.
+- Add further annotated screenshots and a project demonstration video.
+- Include power estimates only after validating the corresponding power report.
+
+## Project Artifacts
+
+- RTL: `elevator_controller.v`
+- Testbench: `elevator_tb.v`
+- GDSII layout: `physical_design/elevator_controller.gds`
+- OpenLane configuration: `openlane_config/`
+- Verification reports: `submission/verification_reports/`
+- Submission checklist: `submission/FINAL_SUBMISSION_CHECKLIST.md`
+- Final report PDF: `smart_elevator_final_report.pdf`
+
