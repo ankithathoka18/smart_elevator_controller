@@ -1,0 +1,5 @@
+elevator_check
+elevator_sim
+elevator.vcd
+openlane_config/runs/
+results/smart_elevator
