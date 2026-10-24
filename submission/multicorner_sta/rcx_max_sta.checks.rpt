@@ -1,0 +1,196 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Fastest Corner ===================================
+
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: moving_down (output port clocked by clk)
+Path Group: clk
+Path Type: max
+Corner: Fastest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+                  0.05    0.04    0.04 ^ clk (in)
+     1    0.01                           clk (net)
+                  0.05    0.00    0.04 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.03    0.09    0.13 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02                           clknet_0_clk (net)
+                  0.03    0.00    0.13 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.03    0.09    0.22 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     5    0.02                           clknet_1_0__leaf_clk (net)
+                  0.03    0.00    0.22 ^ _109_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                  0.14    0.27    0.49 ^ _109_/Q (sky130_fd_sc_hd__dfxtp_1)
+     6    0.02                           state[1] (net)
+                  0.14    0.00    0.50 ^ _057_/B (sky130_fd_sc_hd__and2b_1)
+                  0.03    0.09    0.59 ^ _057_/X (sky130_fd_sc_hd__and2b_1)
+     1    0.00                           _012_ (net)
+                  0.03    0.00    0.59 ^ _058_/A (sky130_fd_sc_hd__buf_1)
+                  0.16    0.15    0.74 ^ _058_/X (sky130_fd_sc_hd__buf_1)
+     3    0.02                           net9 (net)
+                  0.16    0.00    0.74 ^ output9/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.08    0.16    0.90 ^ output9/X (sky130_fd_sc_hd__clkbuf_4)
+     1    0.03                           moving_down (net)
+                  0.08    0.00    0.90 ^ moving_down (out)
+                                  0.90   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (propagated)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                         -2.00    7.75   output external delay
+                                  7.75   data required time
+-----------------------------------------------------------------------------
+                                  7.75   data required time
+                                 -0.90   data arrival time
+-----------------------------------------------------------------------------
+                                  6.85   slack (MET)
+
+
+
+======================= Slowest Corner ===================================
+
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: moving_down (output port clocked by clk)
+Path Group: clk
+Path Type: max
+Corner: Slowest
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+                  0.11    0.08    0.08 ^ clk (in)
+     1    0.01                           clk (net)
+                  0.11    0.00    0.08 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.07    0.25    0.33 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02                           clknet_0_clk (net)
+                  0.07    0.00    0.33 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.06    0.22    0.55 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     5    0.02                           clknet_1_0__leaf_clk (net)
+                  0.06    0.00    0.55 ^ _109_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                  0.28    0.82    1.38 ^ _109_/Q (sky130_fd_sc_hd__dfxtp_1)
+     6    0.02                           state[1] (net)
+                  0.28    0.00    1.38 ^ _057_/B (sky130_fd_sc_hd__and2b_1)
+                  0.07    0.32    1.69 ^ _057_/X (sky130_fd_sc_hd__and2b_1)
+     1    0.00                           _012_ (net)
+                  0.07    0.00    1.69 ^ _058_/A (sky130_fd_sc_hd__buf_1)
+                  0.34    0.36    2.06 ^ _058_/X (sky130_fd_sc_hd__buf_1)
+     3    0.02                           net9 (net)
+                  0.34    0.00    2.06 ^ output9/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.18    0.47    2.53 ^ output9/X (sky130_fd_sc_hd__clkbuf_4)
+     1    0.03                           moving_down (net)
+                  0.18    0.00    2.53 ^ moving_down (out)
+                                  2.53   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (propagated)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                         -2.00    7.75   output external delay
+                                  7.75   data required time
+-----------------------------------------------------------------------------
+                                  7.75   data required time
+                                 -2.53   data arrival time
+-----------------------------------------------------------------------------
+                                  5.22   slack (MET)
+
+
+
+======================= Typical Corner ===================================
+
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: moving_down (output port clocked by clk)
+Path Group: clk
+Path Type: max
+Corner: Typical
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock source latency
+                  0.07    0.05    0.05 ^ clk (in)
+     1    0.01                           clk (net)
+                  0.07    0.00    0.05 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.04    0.14    0.19 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     2    0.02                           clknet_0_clk (net)
+                  0.04    0.00    0.19 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+                  0.04    0.13    0.32 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+     5    0.02                           clknet_1_0__leaf_clk (net)
+                  0.04    0.00    0.32 ^ _109_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                  0.18    0.42    0.74 ^ _109_/Q (sky130_fd_sc_hd__dfxtp_1)
+     6    0.02                           state[1] (net)
+                  0.18    0.00    0.74 ^ _057_/B (sky130_fd_sc_hd__and2b_1)
+                  0.04    0.15    0.89 ^ _057_/X (sky130_fd_sc_hd__and2b_1)
+     1    0.00                           _012_ (net)
+                  0.04    0.00    0.89 ^ _058_/A (sky130_fd_sc_hd__buf_1)
+                  0.21    0.21    1.10 ^ _058_/X (sky130_fd_sc_hd__buf_1)
+     3    0.02                           net9 (net)
+                  0.21    0.00    1.10 ^ output9/A (sky130_fd_sc_hd__clkbuf_4)
+                  0.11    0.25    1.36 ^ output9/X (sky130_fd_sc_hd__clkbuf_4)
+     1    0.03                           moving_down (net)
+                  0.11    0.00    1.36 ^ moving_down (out)
+                                  1.36   data arrival time
+
+                         10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (propagated)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                         -2.00    7.75   output external delay
+                                  7.75   data required time
+-----------------------------------------------------------------------------
+                                  7.75   data required time
+                                 -1.36   data arrival time
+-----------------------------------------------------------------------------
+                                  6.39   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Fastest Corner ===================================
+
+No paths found.
+
+======================= Slowest Corner ===================================
+
+No paths found.
+
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Fastest Corner ===================================
+
+
+======================= Slowest Corner ===================================
+
+
+======================= Typical Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
