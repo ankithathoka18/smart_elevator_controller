@@ -1,0 +1,11 @@
+{
+  "DESIGN_NAME": "elevator_controller",
+  "VERILOG_FILES": [
+    "/work/elevator_controller.v"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10,
+  "FP_SIZING": "relative",
+  "CORE_UTILIZATION":20,
+  "PL_TARGET_DENSITY": 0.60
+}
