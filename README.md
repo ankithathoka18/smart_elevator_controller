@@ -110,3 +110,14 @@ The cell count and area are from the available synthesis statistics. Timing valu
 - Add clear screenshots of simulation waveforms and the final layout.
 - Summarize DRC and LVS findings directly in the report.
 - Add a short project demonstration video.
+
+## Timing Verification
+
+Timing summary values collected from the available OpenLane/OpenSTA reports:
+
+| Report | Worst Setup Slack | Worst Hold Slack | TNS | WNS |
+|---|---:|---:|---:|---:|
+| RCX nominal summary | +5.25 ns | +0.15 ns | 0.00 | 0.00 |
+| RCX summary | +6.41 ns | +0.39 ns | 0.00 | 0.00 |
+
+These values are copied from the report output available for this project. Results apply to the corresponding reported flow stage and constraints; they do not by themselves establish complete signoff across every process-voltage-temperature corner.
