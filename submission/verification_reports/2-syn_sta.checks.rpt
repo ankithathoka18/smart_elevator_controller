@@ -1,0 +1,141 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: _109_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: moving_up (output port clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.15    0.00    0.00   clock clk (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.15    0.00    0.00 ^ _109_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                  0.06    0.39    0.39 v _109_/Q (sky130_fd_sc_hd__dfxtp_2)
+     6    0.02                           state[1] (net)
+                  0.06    0.00    0.39 v _051_/A_N (sky130_fd_sc_hd__and2b_2)
+                  0.03    0.21    0.60 ^ _051_/X (sky130_fd_sc_hd__and2b_2)
+     1    0.00                           _009_ (net)
+                  0.03    0.00    0.60 ^ _052_/A (sky130_fd_sc_hd__buf_1)
+                  0.48    0.39    1.00 ^ _052_/X (sky130_fd_sc_hd__buf_1)
+     3    0.04                           moving_up (net)
+                  0.48    0.00    1.00 ^ moving_up (out)
+                                  1.00   data arrival time
+
+                  0.15   10.00   10.00   clock clk (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                         -0.25    9.75   clock uncertainty
+                          0.00    9.75   clock reconvergence pessimism
+                         -2.00    7.75   output external delay
+                                  7.75   data required time
+-----------------------------------------------------------------------------
+                                  7.75   data required time
+                                 -1.00   data arrival time
+-----------------------------------------------------------------------------
+                                  6.75   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 69 unannotated drivers.
+ clk
+ request_valid
+ requested_floor[0]
+ requested_floor[1]
+ reset
+ _051_/X
+ _052_/X
+ _053_/Y
+ _054_/Y
+ _055_/Y
+ _056_/Y
+ _057_/X
+ _058_/X
+ _059_/Y
+ _060_/X
+ _061_/X
+ _062_/X
+ _063_/X
+ _064_/X
+ _065_/X
+ _066_/X
+ _067_/X
+ _068_/Y
+ _069_/Y
+ _070_/Y
+ _071_/Y
+ _072_/X
+ _073_/Y
+ _074_/Y
+ _075_/X
+ _076_/Y
+ _077_/X
+ _078_/X
+ _079_/X
+ _080_/Y
+ _081_/X
+ _082_/Y
+ _083_/X
+ _084_/Y
+ _085_/Y
+ _086_/Y
+ _087_/Y
+ _088_/Y
+ _089_/Y
+ _090_/X
+ _091_/Y
+ _092_/X
+ _093_/X
+ _094_/X
+ _095_/X
+ _096_/X
+ _097_/X
+ _098_/Y
+ _099_/X
+ _100_/X
+ _101_/X
+ _102_/Y
+ _103_/Y
+ _104_/X
+ _105_/X
+ _106_/Q
+ _107_/Q
+ _108_/Q
+ _109_/Q
+ _110_/Q
+ _111_/Q
+ _112_/Q
+ _113_/Q
+ _114_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
