@@ -1,12 +1,18 @@
-# Multi-corner STA preparation
+# Timing Analysis Evidence
 
-This folder records the available Sky130 timing libraries, design files,
-constraints, and previously generated OpenLane timing reports.
+This directory contains timing reports copied from the existing OpenLane
+run, available Sky130 timing-library filenames, and design-file inventory.
 
-Important:
-- Listing a Liberty file does not mean its corner was analyzed.
-- Existing single-corner reports are not evidence of 16-corner STA.
-- Multi-corner closure must only be claimed after running STA with a
-  valid library, matching design netlist, constraints, and parasitics
-  for each selected PVT corner.
-- Review the report headers and logs before reporting any slack values.
+## Status
+- Existing synthesis, placement, CTS, routing, and RCX timing reports are
+  collected where available.
+- Reports from different flow stages are not automatically separate PVT
+  corners.
+- A genuine multi-corner STA run has not been confirmed by this collection
+  step.
+- Do not claim 16-corner timing closure without a run log and results for
+  each analyzed corner.
+- The existing 10 ns clock constraint is recorded in the project SDC.
+
+See `sta_evidence_review.txt` for a keyword-based review of the collected
+reports. This review is not itself a timing analysis.
