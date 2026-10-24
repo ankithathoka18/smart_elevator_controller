@@ -32,3 +32,20 @@ The OpenLane flow completed successfully and generated the final GDS layout. The
 
 ## Notes
 Timing and physical verification results depend on the constraints, process corner, and tool configuration used. Review the included reports when evaluating the results.
+
+## Verified Synthesis and Timing Results
+
+Synthesis statistics from the OpenLane run:
+
+- Synthesized standard-cell count: 64
+- Reported synthesis chip area: 649.3728 (confirm area units from the tool/library report)
+- Memory bits: 0
+- Synthesis processes: 0
+
+Placement-stage timing summary:
+
+- Worst setup slack: +6.72 ns
+- Worst hold slack: +0.24 ns
+- Total negative slack (TNS): 0.00
+
+These values are from the generated reports and apply to the reported flow stage and constraints. They do not by themselves establish full signoff or multi-corner timing closure.
