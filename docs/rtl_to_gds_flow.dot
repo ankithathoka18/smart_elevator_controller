@@ -1,0 +1,26 @@
+digraph RTL_to_GDSII {
+    rankdir=TB;
+    node [shape=box, style="rounded", fontname="Arial"];
+    edge [fontname="Arial"];
+
+    RTL [label="Verilog RTL"];
+    SIM [label="Functional Simulation"];
+    SYN [label="Logic Synthesis"];
+    FLOOR [label="Floorplanning"];
+    PLACE [label="Placement"];
+    CTS [label="Clock Tree Synthesis\n(if applicable)"];
+    ROUTE [label="Routing\n(if applicable)"];
+    STA [label="Timing Analysis"];
+    GDS [label="GDSII Layout"];
+    VERIFY [label="DRC / LVS Verification"];
+
+    RTL -> SIM;
+    SIM -> SYN;
+    SYN -> FLOOR;
+    FLOOR -> PLACE;
+    PLACE -> CTS;
+    CTS -> ROUTE;
+    ROUTE -> STA;
+    STA -> GDS;
+    GDS -> VERIFY;
+}

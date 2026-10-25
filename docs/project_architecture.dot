@@ -1,0 +1,19 @@
+digraph ProjectArchitecture {
+    rankdir=TB;
+    node [shape=box, style="rounded", fontname="Arial"];
+
+    RTL [label="elevator_controller.v\nVerilog RTL"];
+    TB [label="elevator_tb.v\nTestbench"];
+    SIM [label="Functional Simulation"];
+    SYN [label="Synthesis"];
+    FLOW [label="OpenLane Physical Design"];
+    GDS [label="elevator_controller.gds"];
+    REPORTS [label="Timing, DRC and LVS Reports"];
+
+    RTL -> SIM;
+    TB -> SIM;
+    RTL -> SYN;
+    SYN -> FLOW;
+    FLOW -> GDS;
+    FLOW -> REPORTS;
+}

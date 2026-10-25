@@ -186,3 +186,119 @@ The OpenLane flow completed and generated the layout. Refer to the included veri
 - Submission checklist: `submission/FINAL_SUBMISSION_CHECKLIST.md`
 - Final report PDF: `smart_elevator_final_report.pdf`
 
+
+---
+
+# Visual Project Documentation
+
+## 1. Project Architecture
+
+The project starts with the Verilog RTL and testbench. Functional simulation checks the RTL behavior. The RTL is then synthesized and processed through the physical-design flow.
+
+![Smart Elevator Controller Project Architecture](docs/images/project_architecture.png)
+
+Editable diagram source: `docs/project_architecture.dot`.
+
+## 2. RTL-to-GDSII Flow
+
+The following diagram summarizes the major stages of an RTL-to-GDSII implementation flow.
+
+![RTL to GDSII Flow](docs/images/rtl_to_gds_flow.png)
+
+Editable diagram source: `docs/rtl_to_gds_flow.dot`.
+
+The exact stages completed in this project should be confirmed from the available OpenLane run reports. Clock-tree synthesis and routing are shown as flow stages, not as independent claims that every stage completed successfully.
+
+## 3. Functional Simulation Evidence
+
+The Verilog testbench is `elevator_tb.v`, and the RTL source is `elevator_controller.v`.
+
+The recorded simulation result was:
+
+**`ALL TESTS PASSED`**
+
+Add a screenshot of the actual simulation output to `screenshots/sim.png` if it is available. The image should show the real output from this project.
+
+## 4. Physical Layout Evidence
+
+The generated layout is available at:
+
+`physical_design/elevator_controller.gds`
+
+Open the GDSII file in KLayout to inspect the physical layout. Add a screenshot of the actual layout to `screenshots/gds.png` when available.
+
+## 5. Synthesis Results
+
+| Metric | Recorded result |
+|---|---:|
+| Standard-cell count | 64 |
+| Reported synthesis area | 649.3728 tool-reported units |
+| Memory bits | 0 |
+| Processes | 0 |
+
+The values above are reproduced from the available synthesis results. Interpret the area according to the tool's reporting units.
+
+## 6. Timing Analysis
+
+The recorded placement timing results are:
+
+| Metric | Recorded result |
+|---|---:|
+| Worst setup slack | +6.72 ns |
+| Worst hold slack | +0.24 ns |
+| Total negative slack (TNS) | 0 |
+
+Timing results depend on the implementation stage, constraints, libraries, and process corner. The values above do not establish complete 16-corner PVT signoff.
+
+Refer to the available timing reports in `submission/verification_reports/`.
+
+## 7. Physical Verification
+
+### Design Rule Check (DRC)
+
+The available final DRC report records zero violations after GDSII generation.
+
+### Layout Versus Schematic (LVS)
+
+The available LVS logs report that the circuits matched uniquely. Refer to the detailed LVS report for its full status and comparison results.
+
+DRC and LVS check different aspects of the physical design and should be evaluated separately.
+
+## 8. Screenshots to Include
+
+For a more complete visual record, add genuine screenshots of the following where available:
+
+1. RTL simulation showing `ALL TESTS PASSED`.
+2. Synthesis statistics.
+3. Floorplan view.
+4. Placement view.
+5. Clock-tree synthesis result, if completed.
+6. Routing result, if completed.
+7. Final GDSII layout in KLayout.
+8. Timing report.
+9. DRC report.
+10. LVS report.
+
+Use screenshots captured from the actual project. Do not substitute illustrative images for tool results.
+
+## 9. Project Deliverables
+
+| Artifact | Location |
+|---|---|
+| RTL source | `elevator_controller.v` |
+| Testbench | `elevator_tb.v` |
+| GDSII layout | `physical_design/elevator_controller.gds` |
+| OpenLane run artifacts | `openlane_config/runs/` |
+| Verification reports | `submission/verification_reports/` |
+| Final report PDF | `smart_elevator_final_report.pdf` |
+| Submission archive | `smart_elevator_submission.zip` |
+
+## 10. Limitations and Future Work
+
+- Complete and document the required multi-corner timing analysis.
+- Verify the actual process corners, libraries, and constraints used by each timing report.
+- Document the detailed LVS report status.
+- Add screenshots of the actual implementation stages.
+- Add power results only if supported by a genuine power report.
+- Expand the testbench to cover additional operating scenarios.
+
