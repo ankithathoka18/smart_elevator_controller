@@ -305,4 +305,4 @@ Use screenshots captured from the actual project. Do not substitute illustrative
 ## 11.Project Demonstration
 
 "▶ Watch my Smart Elevator Controller Demo Video"
-https://drive.google.com/file/d/1-CaPEBFhImyT1B6a65j-DcuiFoZAD0p_/view?usp=drive_link
+https://drive.google.com/file/d/1uFaESmMQE6RRD8SPOTxHrbvsKIOwRxtS/view?usp=drive_link
